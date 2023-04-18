@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gifed</name>
+    </assembly>
+    <members>
+        <member name="T:Gifed.AnimatedGif">
+            <summary>
+                Provides an interface of loading, manipulating, and created animated GIF images.
+            </summary>
+        </member>
+        <member name="P:Gifed.AnimatedGif.Item(System.Int32)">
+            <summary>
+                Get a single frame at the specified index.
+            </summary>
+            <param name="index">The index of the desired frame.</param>
+            <returns>The requested <see cref="T:Gifed.GifFrame" /> on success.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="value" /> is <see langword="null" />.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                Thrown when <paramref name="index" /> is less than 0, or
+                <paramref name="index" /> is equal to or greater than <see cref="P:Gifed.AnimatedGif.FrameCount" />.
+            </exception>
+        </member>
+        <member name="P:Gifed.AnimatedGif.LoopCount">
+            <summary>
+                How many times the animation should loop before it stops (0 for indefinite).
+            </summary>
+        </member>
+        <member name="P:Gifed.AnimatedGif.FrameCount">
+            <summary>
+                How many frames the animation contains.
+            </summary>
+        </member>
+        <member name="P:Gifed.AnimatedGif.Duration">
+            <summary>
+                The total duration of the animation.
+            </summary>
+        </member>
+        <member name="M:Gifed.AnimatedGif.#ctor(System.UInt16)">
+            <summary>
+                Creates a new, unpopulated animation with the specified loop count.
+            </summary>
+            <param name="loopCount">How many times the animation should loop before it stops (0 for indefinite).</param>
+        </member>
+        <member name="M:Gifed.AnimatedGif.Dispose">
+            <summary>
+                Releases all resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Gifed.AnimatedGif.LoadFrom(System.String)">
+            <summary>
+                Loads an existing GIF image from the specified file.
+            </summary>
+            <param name="path">A full or relative path an image on disk.</param>
+            <returns>A new instance of <see cref="T:Gifed.AnimatedGif" /> representing the file.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the file does not contain data for an animated GIF image.</exception>
+        </member>
+        <member name="M:Gifed.AnimatedGif.LoadFrom(System.IO.Stream)">
+            <summary>
+                Loads an existing GIF image from the specified stream.
+            </summary>
+            <param name="stream">A readable stream containing image data.</param>
+            <returns>A new instance of <see cref="T:Gifed.AnimatedGif" /> representing the stream.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the stream does not contain data for an animated GIF image.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when an I/O error occurs.</exception>
+            <exception cref="T:System.NotSupportedException">The stream does not support reading.</exception>
+        </member>
+        <member name="M:Gifed.AnimatedGif.AddFrame(System.Drawing.Image,System.TimeSpan)">
+            <summary>
+                Adds a single frame to the animation with the specified delay.
+            </summary>
+            <param name="image">The image data of the frame.</param>
+            <param name="delay">The delay of the frame.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="image" /> is <see langword="null" />.</exception>
+        </member>
+        <member name="M:Gifed.AnimatedGif.AddFrame(Gifed.GifFrame)">
+            <summary>
+                Adds a single frame to the animation.
+            </summary>
+            <param name="frame">The <see cref="T:Gifed.GifFrame" /> to add.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="frame" /> is <see langword="null" />.</exception>
+        </member>
+        <member name="M:Gifed.AnimatedGif.AddFrames(Gifed.GifFrame[])">
+            <summary>
+                Adds multiple frames to the animation.
+            </summary>
+            <param name="frames">An array of <see cref="T:Gifed.GifFrame" /> to add.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="frames" /> is <see langword="null" />.</exception>
+            <exception cref="T:System.ArgumentNullException">
+                Thrown when any individual <see cref="T:Gifed.GifFrame" /> in
+                <paramref name="frames" /> is <see langword="null" />.
+            </exception>
+        </member>
+        <member name="M:Gifed.AnimatedGif.AddFrames(System.Collections.Generic.IEnumerable{Gifed.GifFrame})">
+            <summary>
+                Adds multiple frames to the animation.
+            </summary>
+            <param name="frames"></param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="frames" /> is <see langword="null" />.</exception>
+            <exception cref="T:System.ArgumentNullException">
+                Thrown when any individual <see cref="T:Gifed.GifFrame" /> in
+                <paramref name="frames" /> is <see langword="null" />.
+            </exception>
+        </member>
+        <member name="M:Gifed.AnimatedGif.RemoveFrame(System.Int32)">
+            <summary>
+                Removes a single frame from the animation.
+            </summary>
+            <param name="index">The zero-based index of the frame to remove.</param>
+        </member>
+        <member name="M:Gifed.AnimatedGif.RemoveFrame(Gifed.GifFrame)">
+            <summary>
+                Removes a single frame from the animation.
+            </summary>
+            <param name="frame">The desired <see cref="T:Gifed.GifFrame" /> to remove.</param>
+            <returns><see langword="true" /> if the frame was removed, <see langword="false" /> otherwise.</returns>
+        </member>
+        <member name="M:Gifed.AnimatedGif.RemoveFrames(System.Int32,System.Int32)">
+            <summary>
+                Removes a range of frames from the animation.
+            </summary>
+            <param name="index">The zero-based index of the position to start removing at.</param>
+            <param name="count">The number of frames to remove after <paramref name="index" />.</param>
+        </member>
+        <member name="M:Gifed.AnimatedGif.RemoveAllFrames(System.Predicate{Gifed.GifFrame})">
+            <summary>
+                Removes all frames from the animation that match a predicate.
+            </summary>
+            <param name="pred">The predicate used to test frames for removal.</param>
+            <returns>The number of frames that were removed from the animation.</returns>
+        </member>
+        <member name="M:Gifed.AnimatedGif.RemoveAllFrames">
+            <summary>
+                Removes all frames from the animation.
+            </summary>
+        </member>
+        <member name="M:Gifed.AnimatedGif.Save(System.String)">
+            <summary>
+                Saves the animation to the specified file on disk.
+            </summary>
+            <param name="path">An absolute or relative path to save the animation to.</param>
+        </member>
+        <member name="M:Gifed.AnimatedGif.Save(System.IO.Stream)">
+            <summary>
+                Saves the image data for the animation to the specified stream.
+            </summary>
+            <param name="stream">A writeable <see cref="T:System.IO.Stream" /> to save the image data to.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the animation does not contain any frames.</exception>
+        </member>
+        <member name="T:Gifed.GifFrame">
+            <summary>
+                Represents one individual frame of an animated GIF.
+            </summary>
+        </member>
+        <member name="P:Gifed.GifFrame.Image">
+            <summary>
+                The image content of the frame.
+            </summary>
+        </member>
+        <member name="P:Gifed.GifFrame.Delay">
+            <summary>
+                The delay of each frame.
+            </summary>
+        </member>
+        <member name="M:Gifed.GifFrame.#ctor(System.Drawing.Image,System.TimeSpan)">
+            <summary>
+                Creates a new GIF frame from the specified image with the specified delay.
+            </summary>
+            <param name="image">The image content of the frame.</param>
+            <param name="delay">The delay of the frame.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="image" /> is <see langword="null" />.</exception>
+        </member>
+        <member name="M:Gifed.GifFrame.Dispose">
+            <summary>
+                Releases all resources used by this object.
+            </summary>
+        </member>
+        <member name="T:System.Linq.IEnumerableExtensions">
+            <summary>
+                Provies a set of extensions for <see cref="T:System.Collections.Generic.IEnumerable`1" />.
+            </summary>
+        </member>
+        <member name="M:System.Linq.IEnumerableExtensions.InChunksOf``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+                Splits an <see cref="T:System.Collections.Generic.IEnumerable`1" /> into evenly sized chunks.
+            </summary>
+            <param name="enumerable">The source enumerable.</param>
+            <param name="chunkSize">The size of the chunks to return.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1" /> containing other enumerables representing the chunks.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="enumerable" /> is <see langword="null" />.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="chunkSize" /> is less than 1.</exception>
+        </member>
+        <member name="T:System.Drawing.ImageExtensions">
+            <summary>
+                Provides a set of extensions for the <see cref="T:System.Drawing.Image" /> class.
+            </summary>
+        </member>
+        <member name="M:System.Drawing.ImageExtensions.GetPropertyItem(System.Drawing.Image,System.Drawing.Imaging.PropertyTag)">
+            <summary>
+                Gets the <see cref="T:System.Drawing.Imaging.PropertyItem" /> specified by the <see cref="T:System.Drawing.Imaging.PropertyTag" />.
+            </summary>
+            <param name="image">The image to get the <see cref="T:System.Drawing.Imaging.PropertyItem" /> from.</param>
+            <param name="property">The requested property.</param>
+            <returns>The requested <see cref="T:System.Drawing.Imaging.PropertyItem" /> on success</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="image" /> is <see langword="null" />.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the requested property does not exist.</exception>
+        </member>
+        <member name="M:System.Drawing.ImageExtensions.TryGetPropertyItem(System.Drawing.Image,System.Drawing.Imaging.PropertyTag,System.Drawing.Imaging.PropertyItem@)">
+            <summary>
+                Attempts to get the <see cref="T:System.Drawing.Imaging.PropertyItem" /> specified by the <see cref="T:System.Drawing.Imaging.PropertyTag" />.
+            </summary>
+            <param name="image">The image to get the <see cref="T:System.Drawing.Imaging.PropertyItem" /> from.</param>
+            <param name="propertyTag">The requested property.</param>
+            <param name="propertyItem">The requested <see cref="T:System.Drawing.Imaging.PropertyItem" />.</param>
+            <returns>True on success, false if the property does not exist.</returns>
+        </member>
+        <member name="T:System.Drawing.PropertyItemType">
+            <summary>
+                The types used for the <see cref="P:System.Drawing.Imaging.PropertyItem.Type" /> field.
+            </summary>
+        </member>
+        <member name="F:System.Drawing.PropertyItemType.ByteArray">
+            <summary>
+                Array of unsigned 8-bit integers.
+            </summary>
+        </member>
+        <member name="F:System.Drawing.PropertyItemType.ASCII">
+            <summary>
+                ASCII encoded, null-terminated string.
+            </summary>
+        </member>
+        <member name="F:System.Drawing.PropertyItemType.UInt16Array">
+            <summary>
+                Array of unsigned 16-bit integers.
+            </summary>
+        </member>
+        <member name="F:System.Drawing.PropertyItemType.UInt32Array">
+            <summary>
+                Array of unsigned 32-bit integers.
+            </summary>
+        </member>
+        <member name="F:System.Drawing.PropertyItemType.UInt32PairArray">
+            <summary>
+                Array of unsigned 32-bit integer pairs.
+                Each pair represents a fraction.
+                The first number is the numerator, the second number is the denominator.
+            </summary>
+        </member>
+        <member name="F:System.Drawing.PropertyItemType.UntypedArray">
+            <summary>
+                An array of bytes that may be interpretted as any type.
+            </summary>
+        </member>
+        <member name="F:System.Drawing.PropertyItemType.Int32Array">
+            <summary>
+                Array of signed 32-bit integers.
+            </summary>
+        </member>
+        <member name="F:System.Drawing.PropertyItemType.Int32PairArray">
+            <summary>
+                Array of signed 32-bit integer pairs.
+                Each pair represents a fraction.
+                The first number is the numerator, the second number is the denominator.
+            </summary>
+        </member>
+        <member name="T:System.Drawing.Imaging.PropertyTag">
+            <summary>
+                Named properties for <see cref="M:System.Drawing.ImageExtensions.GetPropertyItem(System.Drawing.Image,System.Drawing.Imaging.PropertyTag)" />.
+            </summary>
+        </member>
+    </members>
+</doc>

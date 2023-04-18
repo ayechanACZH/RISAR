@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" Authors="vvvv group" LicenseUrl="https://www.gnu.org/licenses/lgpl.html" ProjectUrl="http://vvvv.org/" LanguageVersion="2021.3.3.119" Version="0.128">
+  <NugetDependency Id="RKFCmk1Lg5EP3I4IQegLTw" Location="VL.CoreLib" Version="2021.3.3-0119-g0221760f00" />
+  <NugetDependency Id="U2JwHqMJLyGLDs97lM6eZ6" Location="VL.CoreLib.VVVV" Version="42.0.0-0005-g473f650c03" />
+  <Patch Id="Th8hpfHvBF4Lk6VOwDCc9D">
+    <Canvas Id="NtZT52Xp5qNOXK0fF2H7kv" DefaultCategory="VVVV.Value" BordersChecked="false" CanvasType="FullCategory">
+      <!--
+
+    ************************ ApplyMask ************************
+
+-->
+      <Node Name="ApplyMask" Bounds="153,200" Id="TSttkfeJHQSN5gkEF54G9o" Summary="Basic stateful template with one in/out" Tags="vl">
+        <p:NodeReference>
+          <Choice Kind="ContainerDefinition" Name="Patch" />
+          <FullNameCategoryReference ID="Primitive" />
+        </p:NodeReference>
+        <Patch Id="CzjSvRY5dvXQDxmAOA8mZj">
+          <Patch Id="ESJZDDS0I02LAWDOx9RJVV" Name="Create" />
+          <Patch Id="OkqGvJfa3PDOppp4PFQghD" Name="Update">
+            <Pin Id="E08mYhsiaJmMu6ygFc9hRc" Name="Mask Result" Kind="OutputPin" />
+            <Pin Id="GbLfe51ifXhN1IuiKnVSFo" Name="Background" Kind="InputPin" />
+            <Pin Id="Liq35lSMw0WOr6vCpY1mBy" Name="Texture Input" Kind="InputPin" />
+          </Patch>
+          <Canvas Id="C4yd3S6BFv9NWqJ2WO3OFi" CanvasType="Group">
+            <ControlPoint Id="Oebll79c9tbOK09BB0OcEe" Bounds="305,367" />
+            <ControlPoint Id="IXlANACWQy0L0pYh5TGNjE" Bounds="406,76" />
+            <Pad Id="U38IRA0jqVlOIoSFw72vzx" Comment="Scale" Bounds="419,143,56,15" ShowValueBox="true" isIOBox="true" Value="0.003921569">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+              <p:ValueBoxSettings>
+                <p:precision p:Type="Int32">5</p:precision>
+              </p:ValueBoxSettings>
+            </Pad>
+            <Node Bounds="294,187,65,19" Id="CcA3dm2qhLNLBvVA1EK299">
+              <p:NodeReference LastCategoryFullName="OpenCV.Filter" LastSymbolSource="VL.OpenCV.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="Multiply" />
+              </p:NodeReference>
+              <Pin Id="QFIS8U2jLNtMKjCzJPawZR" Name="Input" Kind="InputPin" />
+              <Pin Id="DIacAqVEDZ4O2VFoiwweBs" Name="Input 2" Kind="InputPin" />
+              <Pin Id="PUdRsEcoWWaLh4zzlqhQtc" Name="Scale" Kind="InputPin" />
+              <Pin Id="AgGCW7BhDIiLNp3WOyr676" Name="Apply" Kind="InputPin" />
+              <Pin Id="VTU3VSvLDNAOCTLFn92ymD" Name="Output" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="Ex2QNQblOiENrGW78ymJqL" Bounds="275,79" />
+            <Node Bounds="267,104,67,19" Id="BnF5cghfOB1Pm8RI5A1xj3">
+              <p:NodeReference LastCategoryFullName="OpenCV.Conversion" LastSymbolSource="VL.OpenCV.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="FromImage" />
+                <CategoryReference Kind="Category" Name="Conversion" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="Lmzq7qSRt3sPXNEXTPqCF4" Name="Input" Kind="InputPin" />
+              <Pin Id="AGgz0PSQtaCMPqAFrHwRH4" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="352,104,67,19" Id="T9kaqpBQi9KMyROFfqz01T">
+              <p:NodeReference LastCategoryFullName="OpenCV.Conversion" LastSymbolSource="VL.OpenCV.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="FromImage" />
+                <CategoryReference Kind="Category" Name="Conversion" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="OOChywM92rqNlNmfKQMLxG" Name="Input" Kind="InputPin" />
+              <Pin Id="Ayg809qdQIENlClNgAfY8Y" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="308,312,56,19" Id="SXeB6IOI444NqNX3qiIVmF">
+              <p:NodeReference LastCategoryFullName="OpenCV.Conversion" LastSymbolSource="VL.OpenCV.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="ToImage" />
+                <CategoryReference Kind="Category" Name="Conversion" NeedsToBeDirectParent="true">
+                  <p:OuterCategoryReference Kind="Category" Name="OpenCV" NeedsToBeDirectParent="true" />
+                </CategoryReference>
+              </p:NodeReference>
+              <Pin Id="PFiNtTuiGpZN3j1spK6vFJ" Name="Input" Kind="InputPin" />
+              <Pin Id="NZj0BM1sLm8LBRJh1FbJmv" Name="Pixel Format" Kind="InputPin" />
+              <Pin Id="NyQ9ZAdDEXwLjphOW3styR" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="300,253,87,19" Id="Pjwmw1W5co1Nf7iWSO9vEN">
+              <p:NodeReference LastCategoryFullName="OpenCV.Filter" LastSymbolSource="VL.OpenCV.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="ConvertColor" />
+              </p:NodeReference>
+              <Pin Id="Lw6ZDfyPAqQLPV9ODKZsKE" Name="Input" Kind="InputPin" />
+              <Pin Id="DNZVtK6361gM7mVDcKkdAe" Name="Source Format" Kind="InputPin" />
+              <Pin Id="FIoxYoOyO63OO2BSwYUmKL" Name="Target Format" Kind="InputPin" />
+              <Pin Id="IJdPm6evwmxNRkzhJjFvjN" Name="Destination Channels" Kind="InputPin" />
+              <Pin Id="NIS892in9ckPODf0FhaS2d" Name="Apply" Kind="InputPin" />
+              <Pin Id="QtOpppqgs7LPCwXG6Suchz" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Pad Id="G1i3sBR1ysVL7fB1HfvTaj" Comment="Source Format" Bounds="432,213,104,19" ShowValueBox="true" isIOBox="true" Value="RGBA">
+              <p:TypeAnnotation LastCategoryFullName="VL.OpenCV" LastSymbolSource="VL.OpenCV.dll">
+                <Choice Kind="TypeFlag" Name="ColorConversionSourceCodes" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Pad Id="Qvd31l59h5pPOgP0pRkgc3" Bounds="441,187,202,22" ShowValueBox="true" isIOBox="true" Value="DX11 textures come in as RGBA">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+              <p:ValueBoxSettings>
+                <p:fontsize p:Type="Int32">9</p:fontsize>
+                <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+              </p:ValueBoxSettings>
+            </Pad>
+            <Pad Id="K1TU9ntoBR5NkWJxQQ66Gv" Comment="Target Format" Bounds="436,293,104,19" ShowValueBox="true" isIOBox="true" Value="BGR">
+              <p:TypeAnnotation LastCategoryFullName="VL.OpenCV" LastSymbolSource="VL.OpenCV.dll">
+                <Choice Kind="TypeFlag" Name="ColorConversionTargetCodes" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Pad Id="TUnZhEGlfy1OS7drHr90vp" Bounds="433,257,374,22" ShowValueBox="true" isIOBox="true" Value="and need to be converted to opencv style BGR channel order">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+              <p:ValueBoxSettings>
+                <p:fontsize p:Type="Int32">9</p:fontsize>
+                <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+              </p:ValueBoxSettings>
+            </Pad>
+          </Canvas>
+          <Link Id="ScKoYnK67zOMuXoo39gKDe" Ids="Oebll79c9tbOK09BB0OcEe,E08mYhsiaJmMu6ygFc9hRc" IsHidden="true" />
+          <ProcessDefinition Id="FHNLl8GWgcVOJzRkkPI83E">
+            <Fragment Id="MRFnVwHDf0WOO7H3jKbCxI" Patch="ESJZDDS0I02LAWDOx9RJVV" Enabled="true" />
+            <Fragment Id="PulIQZQ5YLtPp6C2yvbTNE" Patch="OkqGvJfa3PDOppp4PFQghD" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="DAC9tDdA4ZvMzG9hSHori1" Ids="GbLfe51ifXhN1IuiKnVSFo,IXlANACWQy0L0pYh5TGNjE" IsHidden="true" />
+          <Link Id="QwtXkNU0sZENO4VioxhvFm" Ids="U38IRA0jqVlOIoSFw72vzx,PUdRsEcoWWaLh4zzlqhQtc" />
+          <Link Id="NV8FqIa5lovPXarQ5yCpXs" Ids="Liq35lSMw0WOr6vCpY1mBy,Ex2QNQblOiENrGW78ymJqL" IsHidden="true" />
+          <Link Id="FizGf7Zae4fLBImOfmMcmd" Ids="Ex2QNQblOiENrGW78ymJqL,Lmzq7qSRt3sPXNEXTPqCF4" />
+          <Link Id="LvJagJXKFuJNMjH7Lh4X4H" Ids="AGgz0PSQtaCMPqAFrHwRH4,QFIS8U2jLNtMKjCzJPawZR" />
+          <Link Id="ODt7thmOoEfMG5oT4IMcCe" Ids="IXlANACWQy0L0pYh5TGNjE,OOChywM92rqNlNmfKQMLxG" />
+          <Link Id="UttnMjmfIXMQLtLpGF0vic" Ids="Ayg809qdQIENlClNgAfY8Y,DIacAqVEDZ4O2VFoiwweBs" />
+          <Link Id="GxAirFbB5fdLBrWSbPuKik" Ids="NyQ9ZAdDEXwLjphOW3styR,Oebll79c9tbOK09BB0OcEe" />
+          <Link Id="TKzumL5PjztLUWgVfpgSq2" Ids="G1i3sBR1ysVL7fB1HfvTaj,DNZVtK6361gM7mVDcKkdAe" />
+          <Link Id="JNEhdFNNaFlPlXZSPgBkmj" Ids="K1TU9ntoBR5NkWJxQQ66Gv,FIoxYoOyO63OO2BSwYUmKL" />
+          <Link Id="RFkIXnfnbiEMcOyTLnB0UO" Ids="VTU3VSvLDNAOCTLFn92ymD,Lw6ZDfyPAqQLPV9ODKZsKE" />
+          <Link Id="Sb6QWqOwtUdLYi4LHKZkVF" Ids="QtOpppqgs7LPCwXG6Suchz,PFiNtTuiGpZN3j1spK6vFJ" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="Pu817ClDAhPOqvF24GR8Eh">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="QWETX3sX4xiOKVLwgnkLEg">
+        <Canvas Id="B92OWsimjwlMUoBUpcGzpn" BordersChecked="false" CanvasType="Group" />
+        <Patch Id="CeSpNUykYr4MEjdBKV8mIq" Name="Create" />
+        <Patch Id="AFWHnnKwDoSMYgwtrogLS8" Name="Update" />
+        <ProcessDefinition Id="PwhdyMmE08qOgbTPzwKgs4">
+          <Fragment Id="TXuCSFnlhbNQS6u09EEnvH" Patch="CeSpNUykYr4MEjdBKV8mIq" Enabled="true" />
+          <Fragment Id="DDptVlu9ffqNQJnDz5Q28U" Patch="AFWHnnKwDoSMYgwtrogLS8" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="IveIYZtDMa0NfT7PeWbOax" Location="VL.OpenCV" Version="2.0.6-preview" />
+</Document>

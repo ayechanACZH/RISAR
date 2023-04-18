@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" LanguageVersion="2019.1.0-0249-gb3e3ab1260" Version="0.128">
+  <NugetDependency Id="RKFCmk1Lg5EP3I4IQegLTw" Location="VL.CoreLib" Version="0.35.21" />
+  <NugetDependency Id="U2JwHqMJLyGLDs97lM6eZ6" Location="VL.CoreLib.VVVV" Version="0.35.21" />
+  <Patch Id="Th8hpfHvBF4Lk6VOwDCc9D">
+    <Canvas Id="NtZT52Xp5qNOXK0fF2H7kv" DefaultCategory="VVVV.GIF" CanvasType="FullCategory">
+      <!--
+
+    ************************ GIFed.Player ************************
+
+-->
+      <Node Name="GIFed.Player" Category="VVVV.GIF" Bounds="125,195" Id="TSttkfeJHQSN5gkEF54G9o">
+        <p:NodeReference>
+          <Choice Kind="ContainerDefinition" Name="Patch" />
+          <FullNameCategoryReference ID="Primitive" />
+        </p:NodeReference>
+        <Patch Id="CzjSvRY5dvXQDxmAOA8mZj">
+          <Patch Id="ESJZDDS0I02LAWDOx9RJVV" Name="Create" />
+          <Patch Id="OkqGvJfa3PDOppp4PFQghD" Name="Update">
+            <Pin Id="RR1a2oCDfucPJXKJYeTy3G" Name="Texture" Kind="OutputPin" Bounds="-47,339" />
+            <Pin Id="I1QD2HXvwOOPIaClTrmPyV" Name="File Path" Kind="InputPin" Bounds="-88,13" DefaultValue="">
+              <p:TypeAnnotation LastCategoryFullName="IO" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Path" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="K8aqdVLx0TaLjIqYMnhWJP" Name="Play" Kind="InputPin" Bounds="-2,199" />
+            <Pin Id="AOa2mfIup5fNTsumErrZpy" Name="Resolution" Kind="OutputPin" Bounds="-15,295" />
+            <Pin Id="PpOrUOe0BiMOorxcKx5r15" Name="Speed" Kind="InputPin" Bounds="57,199" />
+            <Pin Id="Rlm8s7pMugDLtKPs1jiVB4" Name="Duration" Kind="OutputPin" Bounds="14,329" />
+            <Pin Id="AyLtl3lTTitQAt0lsbkiPn" Name="Reverse" Kind="InputPin" Bounds="-132,161" />
+            <Pin Id="MhqvDitohuSPGNiNrBDrWM" Name="SeekTime" Kind="InputPin" Bounds="122,202" />
+            <Pin Id="EYpRWksuB3fPVy5BAylmou" Name="FrameCount" Kind="OutputPin" Bounds="86,325" />
+            <Pin Id="BmwBaqxUuNyOsZb8FLBOk3" Name="Seek" Kind="InputPin" Bounds="196,211" />
+            <Pin Id="PQf5YvDzNDjLvpn6oYtGfL" Name="Save" Kind="InputPin" Bounds="196,184" />
+            <Pin Id="GfdzigBHr42N5Zr5uqsBqX" Name="NameFile" Kind="InputPin" Bounds="174,147" />
+            <Pin Id="DzHteB6e5syOcN7eDm71Ob" Name="Save Path" Kind="InputPin" Bounds="255,185" />
+          </Patch>
+          <Canvas Id="C4yd3S6BFv9NWqJ2WO3OFi" CanvasType="Group">
+            <ControlPoint Id="UDYM6iSeSriNUvwxaoeJvz" Bounds="-293,509" />
+            <ControlPoint Id="S8zDgsNNXnXPKDt2BvCEYu" Bounds="-212,508" />
+            <ControlPoint Id="N4epcXyZHl9MIyeNsTZ8n3" Bounds="-130,509" />
+            <ControlPoint Id="VA1SPLx3SqgPey3sFdqe3R" Bounds="-58,509" />
+            <ControlPoint Id="EVCnvBHL0RoNjBM3UZUzdp" Bounds="-222,136" />
+            <ControlPoint Id="BMBUCiPaOLGMOauY6pEqky" Bounds="-172,136" />
+            <ControlPoint Id="RMX1xhFW7hWPJWvhfdTvyi" Bounds="-67,136" />
+            <ControlPoint Id="THKOKZuNpHbLvWQlRfywQx" Bounds="9,136" />
+            <ControlPoint Id="IbMQgAMI3xKMYpUlAMdzZs" Bounds="-289,136" />
+            <Node Bounds="-268,260,31,19" Id="NzL5prCWOmQLGRUM3UbNKA">
+              <p:NodeReference LastCategoryFullName="GIFed_Player" LastSymbolSource="VL.GIFed_Player.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="GIFed_Player" />
+                <Choice Kind="ProcessAppFlag" Name="GIF (Local)" />
+              </p:NodeReference>
+              <Pin Id="JNlAclhFVCrOZsy7e1DGII" Name="File Path" Kind="InputPin" DefaultValue="..\..\..\..\..\___ALL_TEXTURING___\GIFs\giphy.gif">
+                <p:TypeAnnotation LastCategoryFullName="IO" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Path" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="VL9h2tz7elpLjHj3Uf4zg6" Name="Stream" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="-286,305,126,19" Id="MR0rMkurHPELf3vx5SLEmH">
+              <p:NodeReference LastCategoryFullName="GIFed_Player" LastSymbolSource="VL.GIFed_Player.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="GIFed_Player" />
+                <Choice Kind="ProcessAppFlag" Name="Loader" />
+              </p:NodeReference>
+              <Pin Id="HOMgYTddTOTOkybUaemXuG" Name="Stream" Kind="InputPin" />
+              <Pin Id="JR4VmfiG7uuPoutib99Wlc" Name="Function" Kind="InputPin" />
+              <Pin Id="Rk9MKEsHsMoOHnSdfJXztK" Name="AnimatedGIF" Kind="OutputPin" />
+              <Pin Id="CeiXGoymFqTQLEzDev1m6A" Name="Duration" Kind="OutputPin" />
+              <Pin Id="Km4fqlsEyCENFy3UuZ7Msl" Name="Frame Count" Kind="OutputPin" />
+              <Pin Id="LVqk40NroXZM32ECcPEQJk" Name="stream" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="-266,415,125,19" Id="M7LR7xUXUy5PpUiobC1XjY">
+              <p:NodeReference LastCategoryFullName="GIFed_Player" LastSymbolSource="VL.GIFed_Player.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="GIFed_Player" />
+                <Choice Kind="ProcessNode" Name="Player" />
+              </p:NodeReference>
+              <Pin Id="HTB3uIFmqB6QPlg7SxKrtx" Name="AnimatedGIF" Kind="InputPin" />
+              <Pin Id="MNX0hnqbWgNPfYbk7ekn5F" Name="Duration" Kind="InputPin" />
+              <Pin Id="LRFdQoeVV2hPFgbsPAp8dm" Name="Frame Count" Kind="InputPin" />
+              <Pin Id="G7z0IZp5UqdLycli1C2bhn" Name="Play" Kind="InputPin" />
+              <Pin Id="Kn1WPsW8CjBO9tzCLxRm1q" Name="Reverse" Kind="InputPin" />
+              <Pin Id="AhvX0Fm669rOtJb52SzKdP" Name="Speed" Kind="InputPin" />
+              <Pin Id="Ghwt85r83VnMEDSYc5L6PM" Name="Seek Time" Kind="InputPin" />
+              <Pin Id="VqoUtcLDiOAPkazSpC5OSw" Name="Seek" Kind="InputPin" />
+              <Pin Id="KPeTxBpLVyAQdflxn5pHT4" Name="Texture" Kind="OutputPin" />
+              <Pin Id="FLxf9WOItpFNqe9d6c0ulV" Name="Resolution" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="-61,416,85,19" Id="AHHqsFD4mo1QHb3g9Mgq07">
+              <p:NodeReference LastCategoryFullName="GIFed_Player" LastSymbolSource="VL.GIFed_Player.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="GIFed_Player" />
+                <Choice Kind="ProcessAppFlag" Name="Saver" />
+              </p:NodeReference>
+              <Pin Id="VikHV4m2iiSOAhJf9Obwn8" Name="Stream" Kind="InputPin" />
+              <Pin Id="DlGDzK94yesQBBzvGP3s3P" Name="Save" Kind="InputPin" />
+              <Pin Id="LRkVsMboxEZORvy6LWcGJ3" Name="NameFile" Kind="InputPin" />
+              <Pin Id="EaCnuhXhmitM6MMTL2uTem" Name="Save Path" Kind="InputPin" />
+            </Node>
+            <ControlPoint Id="Ph2AIDjAFzJOt0gPcoXs7C" Bounds="62,136" />
+            <ControlPoint Id="EZBRHOYR6gkLcBWssbIuol" Bounds="181,136" />
+            <ControlPoint Id="GQpDmshNjW9OLgFnLwyHYp" Bounds="106,136" />
+            <ControlPoint Id="TbP8B1bC2uFQFFiRhtGKJ1" Bounds="-127,136" />
+          </Canvas>
+          <ProcessDefinition Id="FHNLl8GWgcVOJzRkkPI83E">
+            <Fragment Id="MRFnVwHDf0WOO7H3jKbCxI" Patch="ESJZDDS0I02LAWDOx9RJVV" Enabled="true" />
+            <Fragment Id="PulIQZQ5YLtPp6C2yvbTNE" Patch="OkqGvJfa3PDOppp4PFQghD" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="JZrHycLmkLSPN0ut2AoF8D" Ids="UDYM6iSeSriNUvwxaoeJvz,RR1a2oCDfucPJXKJYeTy3G" IsHidden="true" />
+          <Link Id="QwMoF6F5N77On1m8zGUZim" Ids="S8zDgsNNXnXPKDt2BvCEYu,AOa2mfIup5fNTsumErrZpy" IsHidden="true" />
+          <Link Id="Sk3ZaHOJ6r2LtMrKwgLEii" Ids="N4epcXyZHl9MIyeNsTZ8n3,Rlm8s7pMugDLtKPs1jiVB4" IsHidden="true" />
+          <Link Id="EBRdCiFfXHkNUJUtZLTZA3" Ids="VA1SPLx3SqgPey3sFdqe3R,EYpRWksuB3fPVy5BAylmou" IsHidden="true" />
+          <Link Id="K9EFpDo3p7rLgUookdJYjf" Ids="K8aqdVLx0TaLjIqYMnhWJP,EVCnvBHL0RoNjBM3UZUzdp" IsHidden="true" />
+          <Link Id="ORbu0DL5MbMMb3qKpuy9fy" Ids="PpOrUOe0BiMOorxcKx5r15,BMBUCiPaOLGMOauY6pEqky" IsHidden="true" />
+          <Link Id="D5cJomZW1HfMha9CyMsd7k" Ids="MhqvDitohuSPGNiNrBDrWM,RMX1xhFW7hWPJWvhfdTvyi" IsHidden="true" />
+          <Link Id="PvsTIxD0noSMgiJ8L6v1Lc" Ids="BmwBaqxUuNyOsZb8FLBOk3,THKOKZuNpHbLvWQlRfywQx" IsHidden="true" />
+          <Link Id="O1hShkiDxTpLhRUuxaKWle" Ids="I1QD2HXvwOOPIaClTrmPyV,IbMQgAMI3xKMYpUlAMdzZs" IsHidden="true" />
+          <Link Id="JfXfhb441uxNRtDRjLhvtU" Ids="Rk9MKEsHsMoOHnSdfJXztK,HTB3uIFmqB6QPlg7SxKrtx" />
+          <Link Id="DycbUmnESYaOOVhGGQQOwE" Ids="CeiXGoymFqTQLEzDev1m6A,MNX0hnqbWgNPfYbk7ekn5F" />
+          <Link Id="Cdij1DED8kbLPr5mTmmAWv" Ids="Km4fqlsEyCENFy3UuZ7Msl,LRFdQoeVV2hPFgbsPAp8dm" />
+          <Link Id="NFhFaIhv19cND4u30tPa76" Ids="EVCnvBHL0RoNjBM3UZUzdp,G7z0IZp5UqdLycli1C2bhn" />
+          <Link Id="FtrNy8IdA6iPWsBWrzFQUV" Ids="BMBUCiPaOLGMOauY6pEqky,AhvX0Fm669rOtJb52SzKdP" />
+          <Link Id="Qa7bEJd8OPkOdQKraDpTlD" Ids="RMX1xhFW7hWPJWvhfdTvyi,Ghwt85r83VnMEDSYc5L6PM" />
+          <Link Id="P52bzbE2Ve5PbeZRiL03yq" Ids="THKOKZuNpHbLvWQlRfywQx,VqoUtcLDiOAPkazSpC5OSw" />
+          <Link Id="H1YuBAOlKuFO4aQ14LV2di" Ids="KPeTxBpLVyAQdflxn5pHT4,UDYM6iSeSriNUvwxaoeJvz" />
+          <Link Id="H0ulGo1jiOiMYNBR1BMLww" Ids="FLxf9WOItpFNqe9d6c0ulV,S8zDgsNNXnXPKDt2BvCEYu" />
+          <Link Id="TIsFnhDyFSQP6s6vEZjmuG" Ids="Km4fqlsEyCENFy3UuZ7Msl,VA1SPLx3SqgPey3sFdqe3R" />
+          <Link Id="NhvQPvBmSZ0OMLsFKMgrJB" Ids="Ph2AIDjAFzJOt0gPcoXs7C,DlGDzK94yesQBBzvGP3s3P" />
+          <Link Id="BhtzLMwXzF6M27dugHbCVR" Ids="PQf5YvDzNDjLvpn6oYtGfL,Ph2AIDjAFzJOt0gPcoXs7C" IsHidden="true" />
+          <Link Id="PrBKler5JThPEFKRBhyBys" Ids="EZBRHOYR6gkLcBWssbIuol,EaCnuhXhmitM6MMTL2uTem" />
+          <Link Id="GPB7PD7LbwLL4H67vKYwar" Ids="DzHteB6e5syOcN7eDm71Ob,EZBRHOYR6gkLcBWssbIuol" IsHidden="true" />
+          <Link Id="TqOXgITYpTUMesRiBoCodU" Ids="CeiXGoymFqTQLEzDev1m6A,N4epcXyZHl9MIyeNsTZ8n3" />
+          <Link Id="Hr4Zjov0L33LsGOm4ccQ7G" Ids="VL9h2tz7elpLjHj3Uf4zg6,HOMgYTddTOTOkybUaemXuG" />
+          <Link Id="EKHD5eblpZJLtOgIuDofIg" Ids="IbMQgAMI3xKMYpUlAMdzZs,JNlAclhFVCrOZsy7e1DGII" />
+          <Link Id="J3df8sfjzK5NfXsietIsnW" Ids="GQpDmshNjW9OLgFnLwyHYp,LRkVsMboxEZORvy6LWcGJ3" />
+          <Link Id="M2JdmCsG6txOSfbuqGnEoF" Ids="GfdzigBHr42N5Zr5uqsBqX,GQpDmshNjW9OLgFnLwyHYp" IsHidden="true" />
+          <Link Id="C1sPlTKsCv3MPRN8kU5YeO" Ids="TbP8B1bC2uFQFFiRhtGKJ1,Kn1WPsW8CjBO9tzCLxRm1q" />
+          <Link Id="KJkdmwnOQISLjdMlOns7yg" Ids="AyLtl3lTTitQAt0lsbkiPn,TbP8B1bC2uFQFFiRhtGKJ1" IsHidden="true" />
+          <Link Id="HxV8nR8RUp2NuoUQygIrxd" Ids="LVqk40NroXZM32ECcPEQJk,VikHV4m2iiSOAhJf9Obwn8" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="Pu817ClDAhPOqvF24GR8Eh">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="QWETX3sX4xiOKVLwgnkLEg">
+        <Canvas Id="B92OWsimjwlMUoBUpcGzpn" CanvasType="Group" />
+        <Patch Id="CeSpNUykYr4MEjdBKV8mIq" Name="Create" />
+        <Patch Id="AFWHnnKwDoSMYgwtrogLS8" Name="Update" />
+        <ProcessDefinition Id="PwhdyMmE08qOgbTPzwKgs4">
+          <Fragment Id="TXuCSFnlhbNQS6u09EEnvH" Patch="CeSpNUykYr4MEjdBKV8mIq" Enabled="true" />
+          <Fragment Id="DDptVlu9ffqNQJnDz5Q28U" Patch="AFWHnnKwDoSMYgwtrogLS8" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="DQyZa5y3vqXOb9TVu3YYZw" Location="VL.CoreLib.Windows" Version="2019.1.0-0200-g86b3d79d59" />
+  <DocumentDependency Id="S1ATiAVxUNCM39DslJ3yV4" Location="../../VL.GIFed_Player.vl" />
+  <PlatformDependency Id="Bi6IM1c3gSJONsIK4PUOQa" Location="System.Drawing" />
+</Document>
